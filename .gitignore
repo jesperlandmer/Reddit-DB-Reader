@@ -1,0 +1,7 @@
+node_modules
+.idea
+.vagrant
+.DS_Store
+.jscsrc
+config/env.sh
+ngrok
