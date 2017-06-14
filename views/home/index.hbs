@@ -1,0 +1,53 @@
+<div id="home" v-bind:style="styleObject">
+
+    <div id="overlay">
+        <div id="loading-spin"></div>
+    </div>
+
+    <modal :show.sync="showModal">
+        <h3 slot="header">Geolocation Error!</h3>
+    </modal>
+
+{{>home/nav}}
+
+    {{about}}
+    {{#if about}}
+        {{>home/about}}
+    {{else}}
+        {{>home/main}}
+    {{/if}}
+
+</div>
+
+<!-- template for the modal component -->
+<script type="x/template" id="modal-template">
+    <div class="modal-mask" v-show="show" transition="modal">
+        <div class="modal-wrapper">
+            <div class="modal-container">
+
+                <div class="modal-header">
+                    <slot name="header">
+                        Error!
+                    </slot>
+                </div>
+
+                <div class="modal-body">
+                    <slot name="body">
+                        Please allow access for location data.<br>
+                        If you've already allowed access, try refreshing the page!
+                    </slot>
+                </div>
+
+                <div class="modal-footer">
+                    <slot name="footer">
+                        <a target="_blank" href="https://www.google.se/search?q=how+to+allow+website+to+use+location&oq=how+to+allow+website+loca&aqs=chrome.1.69i57j0.10247j0j4&sourceid=chrome&ie=UTF-8">
+                            <button class="modal-default-button">
+                                How?
+                            </button>
+                        </a>
+                    </slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
