@@ -1,0 +1,60 @@
+{
+  "name": "jesper",
+  "version": "1.0.0",
+  "description": "Mendr",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"browserify client/js/app.js | uglifyjs > client/app.min.js\" \"pm2 start app.js\"",
+    "test": "mocha --recursive ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1dv430/jp222vq-project.git"
+  },
+  "author": "Jesper Landmér Pedersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1dv430/jp222vq-project/issues"
+  },
+  "homepage": "https://github.com/1dv430/jp222vq-project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "browserify": "^14.4.0",
+    "pm2": "^2.4.6",
+    "concurrently": "^3.4.0",
+    "express": "^4.10.6",
+    "express-handlebars": "^3.0.0",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "latest",
+    "lodash": "^4.15.0",
+    "method-override": "^2.3.9",
+    "vueify": "^9.4.1",
+    "xss-filters": "^1.2.7",
+    "socket.io": "^1.7.3",
+    "v-tag-input": "0.0.3",
+    "vue": "^1.0.21",
+    "vue-google-maps": "^0.1.21",
+    "vue-input-tag": "0.0.11",
+    "vuejs-datepicker": "^0.7.12",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "node-geocoder": "latest",
+    "mysql": "^2.5.4"
+  },
+  "devDependencies": {
+    "chai-passport-strategy": "latest",
+    "css-loader": "^0.28.1",
+    "normalize.css": "^7.0.0",
+    "passport-mocked": "^1.2.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "jasmine-core": "^2.6.1",
+    "jscs": "^3.0.7",
+    "jsdom": "10.1.0",
+    "jsdom-global": "3.0.2",
+    "jshint": "^2.9.3",
+    "mocha": "^3.0.2",
+    "supertest": "^3.0.0",
+    "zombie": "latest"
+  }
+}

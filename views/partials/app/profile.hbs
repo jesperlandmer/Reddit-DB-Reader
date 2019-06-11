@@ -1,0 +1,107 @@
+<div id="chat-container" xmlns="">
+    <div id="profile-cont">
+        <section id="profile-section">
+            <aside>
+                <img src={{profileData.picture}} alt="" class="profile-image" />
+                <h1 class="name">{{profileData.name}}</h1>
+                <a href="javascript:;" class="follow">Message</a>
+                <ul class="social">
+                    <li>
+                        <span>Hosted</span>
+                        <span>{{profileData.hosted}}</span>
+                    </li>
+                    <li>
+                        <span>Participated</span>
+                        <span>{{profileData.participated}}</span>
+                    </li>
+                    <li>
+                        <span>Rating</span>
+                        <span>☆ ☆ ☆ ☆ ☆</span>
+                    </li>
+                </ul>
+            </aside>
+            <div class="content">
+                <article>
+                    <div class="post">
+                        <div class="info">
+                            <a href="javascript:;">
+                                <div class="author">
+                                    <img src="{{user.picture}}" alt="" />
+                                    <h5>{{user.name}}</h5>
+                                    <span class="time">2 hrs ago</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-about">
+                            <a href="javascript();">
+                                <h3>Recently hosted Badminton 2v2</h3>
+                            </a>
+                            <p>{{user.name}} has just started an acitivity near Gothenburg...</p>
+                            <a href="javascript();" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="post">
+                        <div class="info">
+                            <a href="javascript:;">
+                                <div class="author">
+                                    <img src="{{user.picture}}" alt="" />
+                                    <h5>{{user.name}}</h5>
+                                    <span class="time">6 hrs ago</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-about">
+                            <a href="javascript();">
+                                <h3>Post message in Bollspel</h3>
+                            </a>
+                            <p>{{user.name}} has just posted a message in the chat for Bollspel...</p>
+                            <a href="javascript();" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="post">
+                        <div class="info">
+                            <a href="javascript:;">
+                                <div class="author">
+                                    <img src="https://graph.facebook.com/10156040269412738/picture?width=320&height=320" alt="" />
+                                    <h5>Märta Laakso</h5>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-about">
+                            <a href="javascript();">
+                                <h3>Recently joined Fotboll 4v4</h3>
+                            </a>
+                            <p>{{user.name}} will participate in Märta Laakso's event...</p>
+                            <a href="javascript();" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </article>
+                <article>
+                    <div class="post">
+                        <div class="info">
+                            <a href="javascript:;">
+                                <div class="author">
+                                    <img src="{{user.picture}}" alt="" />
+                                    <h5>{{user.name}}</h5>
+                                    <span class="time">1 day ago</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="post-about">
+                            <a href="javascript();">
+                                <h3><span><img class="badge" src="https://cdn0.iconfinder.com/data/icons/sport-achievment-badges/128/sport_badges-02-128.png"></span> Earned Badge: Football Legend</h3>
+                            </a>
+                            <p>{{user.name}} has just earned the badge "Football Legend"...</p>
+                            <a href="javascript();" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+</div>

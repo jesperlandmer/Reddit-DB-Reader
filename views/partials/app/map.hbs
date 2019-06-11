@@ -1,0 +1,26 @@
+
+<div id="map-canvas">
+    <gmap-map id="gmap-map"
+              v-bind:center.sync="center"
+              v-bind:zoom.sync="zoom"
+              v-bind:options="options"
+    >
+        <gmap-info-window v-for="event in events" :position="event.position" v-cloak>
+            <a href="/mendr/api/activity/\{{event.id}}"><div id="iw-container">
+                <div class="iw-title">
+                    \{{ event.title }}
+                </div>
+            </div>
+            </a>
+        </gmap-info-window>
+    </gmap-map>
+
+    {{>app/sidebar}}
+
+</div>
+<script type="text/x-template" id="map-template">
+    <div class="vue-map-container">
+        <button type="submit" class="center-button center-location"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
+        <div class="vue-map"></div><slot></slot>
+    </div>
+</script>

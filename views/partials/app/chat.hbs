@@ -1,0 +1,62 @@
+<div id="chat-container" xmlns="">
+    <div id="frame">
+        <div id="sidepanel">
+            <div id="contacts">
+            <ul>
+               {{#each chats}}
+                <li class="contact">
+                    <a href="/mendr/api/chat/{{this.id}}">
+                    <div class="wrap">
+                        <div class="meta">
+                            <p class="name">{{this.name}}
+                                <span class="contact-status online"></span></p>
+                            <p class="preview">
+                            </p>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+               {{/each}}
+            </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="contact-profile">
+                <a href="/mendr/api/profile/{{user.id}}">
+                    <img src={{user.picture}} alt="" />
+                </a>
+                <p>{{user.name}}</p>
+            </div>
+            <div class="messages">
+                <chat-history
+                        :data.sync="chatData">
+                </chat-history>
+            </div>
+            <div class="message-input">
+                <div class="wrap">
+                    <input type="text" @keyup.enter="newMessage('{{user.id}}', '{{chatId}}','{{user.name}}','{{user.picture}}')" v-model="input" placeholder="Write your message..." />
+                    <button class="submit" @click="newMessage('{{user.id}}', '{{chatId}}','{{user.name}}','{{user.picture}}')"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-template" id="chat-template">
+    <ul v-for="message in data">
+        <li v-if="message['message_id'] === '{{user.id}}'" class="replies">
+            <a href="/mendr/api/profile/{{user.id}}">
+                <img :src="message['picture']" alt="" />
+                <p class="username">\{{message["name"]}}</p><br><br>
+            </a>
+            <p>\{{message["text"]}}</p>
+        </li>
+        <li v-else class="sent">
+            <a v-bind:href="message['href']">
+                <img :src="message['picture']" alt="" />
+            </a>
+            <p class="username">\{{message["name"]}}</p><br><br>
+            <p>\{{message["text"]}}</p>
+        </li>
+    </ul>
+</script>
