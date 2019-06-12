@@ -1,0 +1,34 @@
+
+<body class="app">
+<div class="mendr-container">
+    <div id="overlay">
+        <div id="loading-spin"></div>
+    </div>
+
+    {{>app/nav}}
+
+    {{#if profile}}
+        {{>app/profile}}
+    {{/if}}
+
+    {{#if chat}}
+        {{>app/chat}}
+    {{/if}}
+
+    {{#if activityInstance}}
+        {{>app/create}}
+    {{/if}}
+
+    {{#if map}}
+        {{>app/map}}
+    {{/if}}
+
+    {{#if search}}
+        {{>app/search}}
+    {{/if}}
+
+    {{#if activity}}
+        {{>app/activity}}
+    {{/if}}
+
+</body>

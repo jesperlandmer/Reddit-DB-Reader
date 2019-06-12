@@ -1,0 +1,35 @@
+<div id="search-canvas">
+
+    <div class="search-content">
+        <form id="search">
+            <input name="query" v-model="searchQuery" placeholder="Search title, location, tags etc...">
+        </form>
+        <search-grid
+                :data="gridData"
+                :columns="searchGridColumns"
+                :filter-key="searchQuery">
+        </search-grid>
+    </div>
+
+</div>
+<script type="text/x-template" id="search-template">
+    <table>
+        <tbody>
+        <tr v-show="filterKey.length" v-for="event in data
+            | filterBy filterKey
+            | orderBy 'tags'
+            | orderBy sortKey sortOrders[sortKey]"
+            @click="href">
+            <td id=\{{event["id"]}}>
+                \{{ event["title"] }}
+            </td>
+            <td id=\{{event["id"]}}>
+                \{{ event["location"] }}
+            </td>
+            <td id=\{{event["id"]}}>
+                <div v-for="tag in event['tags']" class="tag js-tag" data-index="0">\{{ tag }}</div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</script>
